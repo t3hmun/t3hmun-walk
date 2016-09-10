@@ -13,7 +13,7 @@ const path = require('path');
  * 
  * @param {string} dir - Directory to start recursively listing files from.
  * @param {function(Error, string[])} callback - Either delivers an Error or a 
- *  list of files, path relative to dir.
+ *  list of files, paths joined with the original dir given.
  */
 var walk = module.exports = function(dir, callback) {
     fs.readdir(dir, function(err, files) {
