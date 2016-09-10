@@ -2,7 +2,19 @@
   "name": "t3hmun-walk",
   "version": "1.0.0",
   "description": "Asynchronous directory walk.",
+  "keywords" : ["walk", "readdir", "asynchronous", "file list"],
   "main": "walk.js",
-  "author": "t3hmun",
-  "license": "ISC"
+  "author": {
+  	"name": "Manish Parekh",
+  	"email": "npm@t3hmun.com",
+  	"web": "http://t3hmun.com"
+  },
+  "license": "ISC",
+  "repository": {
+  	"type": "git",
+  	"url": "https://github.com/t3hmun/t3hmun-walk.git"},
+  "bugs": {
+  	"url": "https://github.com/t3hmun/t3hmun-walk/issues",
+  	"email": "npm@t3hmun.com"
+  }
 }
