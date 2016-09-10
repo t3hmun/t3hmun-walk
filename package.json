@@ -1,0 +1,8 @@
+{
+  "name": "t3hmun-walk",
+  "version": "1.0.0",
+  "description": "Asynchronous directory walk.",
+  "main": "walk.js",
+  "author": "t3hmun",
+  "license": "ISC"
+}
