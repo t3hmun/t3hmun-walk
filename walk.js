@@ -8,6 +8,8 @@
 const fs = require('fs');
 const path = require('path');
 
+exports.all = walkAll;
+
 /**
  * Asynchronously lists all files in specified dir and all subdirs.
  * 
@@ -15,7 +17,7 @@ const path = require('path');
  * @param {function(Error, string[])} callback - Either delivers an Error or a 
  *  list of files, paths joined with the original dir given.
  */
-var walk = module.exports = function(dir, callback) {
+function walkAll(dir, callback) {
     fs.readdir(dir, function(err, files) {
         var flatFiles = [];
         // Prevents more functions being called after a failure, not essential.
@@ -48,17 +50,16 @@ var walk = module.exports = function(dir, callback) {
                     if (stat.isDirectory()) {
                         // Recurse, resolving in callback, which is after the 
                         //  recursed walk() has resolved all its promises.
-                        walk(filepath, function(err, list) {
+                        walkAll(filepath, function(err, list) {
                             if (err) {
                                 failed = true;
                                 reject(err);
                                 return;
                             }
                             flatFiles.push(...list);
+                            // Final statement of the callback chain is resolve.
                             resolve();
-                            return;
                         });
-                        return;
                     }
                 });
             });
