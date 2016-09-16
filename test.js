@@ -55,7 +55,7 @@ new Promise(function (resolve, reject) {
 }).then(function () {
     console.log('\n\nFiltered with only .keep files and skipping folderAA:\n');
     return new Promise(function (resolve, reject) {
-        walk.where('./test/../test', dir=> dir == 'folderAA', file=> file.endsWith('.keep'), function (err, list) {
+        walk.where('./test/../test', dir=> !dir.endsWith('folderAA'), file=> file.endsWith('.keep'), function (err, list) {
             if (err) {
                 reject(err);
                 return;
@@ -76,7 +76,7 @@ new Promise(function (resolve, reject) {
         console.log('promise started.');
         let dirPath = path.resolve('./test');
         console.log(dirPath);
-        walk.where(dirPath, dir=> dir.endsWith('folderAA'), file=> !file.endsWith('.ignore'), function (err, list) {
+        walk.where(dirPath, dir=> !dir.endsWith('folderAA'), file=> !file.endsWith('.ignore'), function (err, list) {
             if (err) {
                 reject(err);
                 return;

@@ -1,6 +1,6 @@
 {
   "name": "t3hmun-walk",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Asynchronous directory walk.",
   "keywords" : ["walk", "readdir", "asynchronous", "file list"],
   "main": "walk.js",

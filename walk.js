@@ -118,7 +118,7 @@ function walkWhere(dir, dirPredicate, filePredicate, callback) {
                         return;
                     }
                     if (stat.isDirectory()) {
-                        if(dirPredicate(filePath)){
+                        if(!dirPredicate(filePath)){
                             resolve();
                             return;
                         }
